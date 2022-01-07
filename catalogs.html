@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+<div class="header__wrapper">
+  <div class="header">
+    <div class="header__item">
+      <a href="index.html" class="logo">
+        Library
+      </a>
+    </div>
+    <div class="header__item">
+    </div>
+  </div>
+</div>
+<div class="popup" id="popup">
+  <form class="block" style="min-width: 400px; position: relative" id="formCatalog" action="#">
+    <i class="ri-close-line block__close" onclick="togglePopupCatalog(-1)"></i>
+    <div class="block__title">
+      Add new catalog
+    </div>
+    <input name="title" type="text" class="block__input" placeholder="Title">
+    <div class="book-adder">
+      <select class="block__select" id="popupBooks">
+      </select>
+      <button type="button" class="block__submit book-adder__submit" id="buttonAddBook">Add book</button>
+    </div>
+    <div class="books" id="popupBooksInCatalog">
+    </div>
+    <input type="submit" class="block__submit" value="Add">
+    <input type="button" class="block__submit block__submit_white" value="Delete" style="display: none">
+  </form>
+</div>
+<div class="content">
+  <div class="title">All catalogs</div>
+  <div class="subtitle">Have fun!</div>
+  <div class="catalog">
+    <form class="block" id="formCatalogFilter">
+      <div class="block__title">
+        Filters
+      </div>
+      <input name="search" type="text" class="block__input" placeholder="Insert catalog name" style="width: 100%; min-width: 200px; box-sizing: border-box">
+      <input type="submit" class="block__submit" value="Search">
+    </form>
+    <div class="block">
+      <div class="showcase" id="catalogs">
+        <div class="showcase__item showcase__item_action" onclick="togglePopupCatalog(-1)">
+          <i class="ri-add-line showcase__item-icon"></i>
+          <div class="showcase__item-title">
+            Add new catalog
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="js/env.js"></script>
+<script type="module" src="js/catalogs.js"></script>
+</body>
+</html>
